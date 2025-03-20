@@ -2,7 +2,17 @@ class SelectionSort {
     public static void selectionSort(int[] arr) {
         int n = arr.length;
 
-       // STUDENT TODO
+       for(int i=0; i<n; i++){
+           int smallIndex = i;
+           for(int j=i+1; j<n; j++){
+               if(arr[j] < arr[smallIndex]){
+                   smallIndex = j;
+               }
+           }
+           int temp = arr[i];
+           arr[i] = arr[smallIndex];
+           arr[smallIndex] = temp;
+       }
     }
 
     public static void main(String[] args) {
